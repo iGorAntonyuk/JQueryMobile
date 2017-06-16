@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>eduwebapp</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link href="style/style.css" rel="stylesheet" type="text/css">
+<script>
+
+
+</script>
+
+</head>
+
+<body>
+<!--code used in the app was referenced from: http://www.w3schools.com/jquerymobile/jquerymobile_ref_data.asp 
+ and http://demos.jquerymobile.com/1.2.0/docs/toolbars/footer-persist-a.html -->
+<div data-role="page" id="home">
+ <div data-role="header" data-position="fixed" data-theme="b" role="contentinfo">
+    <h1>EDUWEBAPP</h1>
+    <div data-role="navbar" role="navigation" class="ui-body-b ui-body">
+    <ul>
+  <li><a href="#home" data-transition="slideup" class="ui-btn-active">HOME</a></li>
+    <li><a href="#login" data-transition="slideup">LOGIN</a></li>
+    <li><a href="#help" data-transition="slideup">HELP</a></li>
+    <li><a href="#contactus" data-transition="slideup">Contact Us</a></li>
+    <li><a href="#about" data-transition="slideup">About</a></li>
+    </ul>
+    </div>
+    </div>
+  <div data-role="content" class="contentm">
+  <img src="Images/home.png">
+  <h2>Welcome to EduWebApp</h2>
+  <!--<p>The application allows you to access academic resources on the go. </p>
+  Please visit out help page for video tutorials and familiarize yourself with main functions. Also, you can start chat conversion on the same page if you have any question. </br>
+You can submit your feedback on the contact us page by either phone or email. </br>
+I hope you will have great experience using our eduwebapp. 
+</p>
+-->
+  </div>
+  <div data-role="footer">
+    <a href="#login" class="ui-btn ui-corner-all ui-shadow ui-btn-right ui-icon-arrow-r" data-transition="slide">Next Page</a>
+  </div>
+</div>
+
+
+<div data-role="page" id="login">
+ <div data-role="header" data-position="fixed" data-theme="b" role="contentinfo">
+    <h1>EDUWEBAPP</h1>
+    <div data-role="navbar" role="navigation" class="ui-body-b ui-body">
+    <ul>
+ <li><a href="#home" data-transition="slideup">HOME</a></li>
+    <li><a href="#login" data-transition="slideup"  class="ui-btn-active">LOGIN</a></li>
+    <li><a href="#help" data-transition="slideup">HELP</a></li>
+    <li><a href="#contactus" data-transition="slideup">Contact Us</a></li>
+    <li><a href="#about" data-transition="slideup">About</a></li>
+    </ul>
+    </div>
+    </div>
+  <div data-role="content" class="contentm">
+  <img src="Images/login.png">
+   <h2>Member Login</h2>
+	  <div data-role="fieldcontain">
+   <label for="fname">Not Member</label> 
+   <a href="#register" data-role="button" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">REGISTER</a>
+   </div>
+   
+   <form action="serverform.php" method="post"  >
+  
+ <label for="fname">username:</label>
+  <input type="text" name="fname" id="fname" />
+   <label for="lname">password:</label>
+  <input type="text" name="lname" id="lname"  />
+     </br>
+ <input type="reset" value="Clear" data-icon="refresh" data-iconpos="left" data-inline="true">
+ </br>
+  <input type="submit" value="Submit" data-icon="check" data-iconpos="right" data-inline="true" >
+   
+</form>
+
+<div id="display" ></div>
+
+  </div> 
+   <div data-role="footer" data-theme="a">
+      <a href="#help" class="ui-btn ui-corner-all ui-shadow ui-btn-right ui-icon-arrow-r" data-transition="slide">Next Page</a>
+      <a href="#home" class="ui-btn ui-corner-all ui-shadow ui-btn-left ui-icon-arrow-r" data-transition="slide" data-direction="reverse">Previous Page</a>
+  </div>
+  </div>
+  
+  
+  
+<div data-role="page" id="register" >
+  <div data-role="header" data-position="fixed" data-theme="b" role="contentinfo" >
+  <a href="#login" class="ui-btn ui-corner-all ui-shadow ui-btn-left ui-icon-arrow-r" data-transition="slide" data-direction="reverse">BACK TO LOGIN</a>
+    <h1>EDUWEBAPP</h1>
+  </div>
+  <div data-role="content" class="contentm">
+  <img src="Images/login.png">
+  <h2> Register for EDUWEBAPP</h2>
+  <form action="serverform.php" method="post"  >
+    <div data-role="fieldcontain">
+    
+  
+ <label for="fname">First Name:</label>
+  <input type="text" name="fname" id="fname" />
+   <label for="lname">Last Name:</label>
+  <input type="text" name="lname" id="lname"  />
+   <label for="lname">Email Address:</label>
+  <input type="text" name="email" id="email"  />
+    <label for="lname">Password:</label>
+  <input type="text" name="password" id="password"  />
+
+   </div> 
+     <div data-role="fieldcontain">
+       <label for="selectmenu" class="select">Select Your Geo Location</label>
+       <select name="selectmenu" id="selectmenu">
+         <option value="option1">North America</option>
+         <option value="option2">Europe</option>
+         <option value="option3">Asia</option>
+       </select>
+     </div>
+</br>
+      <fieldset data-role="controlgroup">
+    <legend>Subsribe to our Newsletter:</legend>
+      <label for="yes">YES</label>
+      <input type="radio" name="option" id="yes"  >
+      <label for="no">NO</label>
+      <input type="radio" name="option" id="no" > 
+  </fieldset>
+</br>
+ <fieldset data-role="controlgroup">
+        <legend>Create personal web page</legend>
+          <label for="text">Web site</label>
+          <input type="checkbox" name="method" id="text" value="">
+          <label for="email">FTP site</label>
+          <input type="checkbox" name="method" id="email" value="">
+               </fieldset>
+
+</br>
+       <label for="points">Select your age</label>
+      <input type="range" name="points" id="points" value="1" min="1" max="120" data-show-value="true">
+      </br>
+      <fieldset data-role="controlgroup">
+        
+          <label for="terms">I Agree</label>
+          <input type="checkbox" name="terms" id="terms" value="">
+  </fieldset>
+  </br>
+ <input type="reset" value="Clear" data-icon="refresh" data-iconpos="left" data-inline="true" >
+ </br>
+
+  <input type="submit" value="Submit" data-icon="check" data-iconpos="right" data-inline="true" >
+   
+</form>
+  
+  
+  
+  </div>
+  <div data-role="footer">
+   <a href="#login" class="ui-btn ui-corner-all ui-shadow ui-btn-left ui-icon-arrow-r" data-transition="slide" data-direction="reverse">BACK TO LOGIN</a>
+  </div>
+</div>
+ 
+
+
+<div data-role="page" id="help">
+ <div data-role="header" data-position="fixed" data-theme="b" role="contentinfo">
+    <h1>EDUWEBAPP</h1>
+    <div data-role="navbar" role="navigation" class="ui-body-b ui-body">
+    <ul>
+  <li><a href="#home" data-transition="slideup">HOME</a></li>
+    <li><a href="#login" data-transition="slideup">LOGIN</a></li>
+    <li><a href="#help" data-transition="slideup"  class="ui-btn-active">HELP</a></li>
+    <li><a href="#contactus" data-transition="slideup">Contact Us</a></li>
+    <li><a href="#about" data-transition="slideup">About</a></li>
+    </ul>
+    </div>
+    </div>
+  <div data-role="content" class="contentm">
+  <img src="Images/help.png">
+   <h2>Learn how to use this App</h2>
+   
+   <div data-role="collapsible-set">
+     <div data-role="collapsible">
+       <h3>Watch Our video tutorials</h3>
+        <video width="320" height="240" controls>
+  <source src="video\samplevideo.mp4" type="video/mp4">
+  
+
+</video> 
+     </div>
+     <div data-role="collapsible" data-collapsed="true">
+       <h3>Watch Online</h3>
+       <iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/3nrLc_JOF7k"
+  frameborder="0" allowfullscreen></iframe>
+     </div>
+     <div data-role="collapsible" data-collapsed="true">
+       <h3>Start chat</h3>
+       <div data-role="fieldcontain">
+         <label for="textinput">Your Name:</label>
+         <input type="text" name="textinput" id="textinput" value=""  />
+         <a href="#dialog" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Start Chat</a>
+        
+       </div>
+       <div data-role="popup" id="dialog">
+         <div data-role="header">
+           <h1>Welcome ...</h1>
+         </div>
+         <div data-role="content">
+         <p>Thank you for contacting us</p>
+         <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Cancel</a>
+         <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline  ui-icon-forward ui-btn-icon-left" data-rel="back">Next</a>
+         </div>
+         <div data-role="footer">
+           <h4>EDUWEBAPP</h4>
+         </div>
+       </div>
+       
+       
+       
+     </div>
+     
+   </div>
+   
+  </div>
+  <div data-role="footer">
+        <a href="#contactus" class="ui-btn ui-corner-all ui-shadow ui-btn-right ui-icon-arrow-r" data-transition="slide">Next Page</a>
+      <a href="#login" class="ui-btn ui-corner-all ui-shadow ui-btn-left ui-icon-arrow-r" data-transition="slide" data-direction="reverse">Previous Page</a>
+  </div>
+</div>
+
+<div data-role="page" id="contactus">
+ <div data-role="header" data-position="fixed" data-theme="b" role="contentinfo">
+    <h1>EDUWEBAPP</h1>
+    <div data-role="navbar" role="navigation" class="ui-body-b ui-body">
+    <ul>
+    <li><a href="#home" data-transition="slideup">HOME</a></li>
+    <li><a href="#login" data-transition="slideup">LOGIN</a></li>
+    <li><a href="#help" data-transition="slideup">HELP</a></li>
+    <li><a href="#contactus" data-transition="slideup"  class="ui-btn-active">Contact Us</a></li>
+    <li><a href="#about" data-transition="slideup">About</a></li>
+    </ul>
+    </div>
+  
+    </div>
+  <div data-role="content" class="contentm">
+  <img src="Images/contact.png">
+   <h2>Contact Us by the following methods</h2>
+   <p>Call us M-F 8AM-5PM : 123-456-7890</p>
+    Email us: <a href="mailto:eduwebapp@webapp.com">eduwebapp@webapp.com</a>
+  </div>
+  <div data-role="footer">
+        <a href="#about" class="ui-btn ui-corner-all ui-shadow ui-btn-right ui-icon-arrow-r" data-transition="slide">Next Page</a>
+      <a href="#help" class="ui-btn ui-corner-all ui-shadow ui-btn-left ui-icon-arrow-r" data-transition="slide" data-direction="reverse">Previous Page</a>
+  </div>
+</div>
+
+<div data-role="page" id="about">
+ <div data-role="header" data-position="fixed" data-theme="b" role="contentinfo">
+    <h1>EDUWEBAPP</h1>
+    <div data-role="navbar" role="navigation" class="ui-body-b ui-body">
+    <ul>
+    <li><a href="#home" data-transition="slideup">HOME</a></li>
+    <li><a href="#login" data-transition="slideup">LOGIN</a></li>
+    <li><a href="#help" data-transition="slideup">HELP</a></li>
+    <li><a href="#contactus" data-transition="slideup">Contact Us</a></li>
+    <li><a href="#about" data-transition="slideup"  class="ui-btn-active">About</a></li>
+    </ul>
+    </div>
+  
+    </div>
+  <div data-role="content" class="contentm">
+  
+   <h2>About EduWebApp</h2>
+   <p>Our main goal is to allow easy access to academic resources with great user experience. </p>
+   We strive to make our application easy to use and with less content to read </br>
+   Using our application you will navigate with less clicks to the content you need.</br>
+   
+  </div>
+  <div data-role="footer">
+      
+      <a href="#contactus" class="ui-btn ui-corner-all ui-shadow ui-btn-left ui-btn-icon-left" data-transition="slide" data-direction="reverse">Previous Page</a>
+  </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
